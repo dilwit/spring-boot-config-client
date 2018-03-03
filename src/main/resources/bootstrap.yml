@@ -1,0 +1,13 @@
+spring:
+    application:
+        name: x-customer
+    profiles:
+        active: production
+    cloud:
+        # config-server with HTTP-Basic authentication
+        config:
+            uri: http://localhost:8888
+            username: xyz
+            password: 123456            
+            # Do not start-up config-server is not available
+            failFast: true 

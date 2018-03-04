@@ -14,9 +14,23 @@ class MessageController {
 
     @Value("${message.welcome:Default welcome...}")
     private String message;
+    
+    @Value("${customer.message:Default customer message...}")
+    private String customerMessage;
+    
+    @Value("${env.message:Default env message...}")
+    private String envMessage;
 
     @RequestMapping("/message")
     String getMessage() {
-        return this.message;
+    	
+    	StringBuilder sb = new StringBuilder();
+    	sb.append(this.message);
+    	sb.append(" | ");
+    	sb.append(this.customerMessage);
+    	sb.append(" | ");
+    	sb.append(this.envMessage);
+    	
+        return sb.toString();
     }
 }

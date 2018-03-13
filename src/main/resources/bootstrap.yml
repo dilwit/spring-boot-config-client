@@ -3,7 +3,7 @@ spring:
         name: x-customer
     profiles:
         # Provides access to multiple property files
-        active: production,production-customer,production-env
+        active: staging,staging-customer,staging-env
     cloud:
         # config-server with HTTP-Basic authentication
         config:

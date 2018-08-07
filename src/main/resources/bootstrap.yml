@@ -13,4 +13,13 @@ spring:
             username: xyz
             password: 123456            
             # Do not start-up config-server is not available
-            failFast: true 
+            failFast: true
+
+# This allows actuator all end-points including the one we are interested in /refresh where configs could be loaded run-time.# disable beans endpoint
+management:
+    endpoints:
+        beans:
+          enabled: false
+        web:
+            exposure:
+                include: "*"

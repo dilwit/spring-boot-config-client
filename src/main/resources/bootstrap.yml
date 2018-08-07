@@ -15,11 +15,12 @@ spring:
             # Do not start-up config-server is not available
             failFast: true
 
-# This allows actuator all end-points including the one we are interested in /refresh where configs could be loaded run-time.# disable beans endpoint
 management:
     endpoints:
-        beans:
-          enabled: false
         web:
             exposure:
+                # This allows actuator all end-points including the one we are interested in /refresh where configs could be loaded run-time.
                 include: "*"
+                # Disables beans and env endpoints
+                exclude: "beans, env"
+        enabled-by-default: true
